@@ -66,6 +66,21 @@ SOFTWARE.
     this will prompt you for the file name this is what you entered when encripted except for the file type
     click enter and the script will run.
     
+-- EXAMPLES
+  in the file contains an example script to test the script on
+  
+  to test it on follow the above add and using the file
+    
+     CODE_EXAMPLE.py
+     
+  once finished run it by using the mode view adn using the file
+  
+    CODE_EXAMPLE
+    
+  once done it should start the script counting up to 1000
+    
 Fell Free to submit changes and other iterrations and fixes
         
   HAPPY CODING
+  
+
