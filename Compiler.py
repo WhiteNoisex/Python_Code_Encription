@@ -3,7 +3,7 @@
 
 import os
 import sys
-'''
+
 if(os.path.isdir(r'keys/') == False):
     prompt = input("First Time Setup Press Enter To Continue or q to exit: ")
     if(prompt == ""):
@@ -14,7 +14,7 @@ if(os.path.isdir(r'keys/') == False):
             sys.exit()
     else:
         sys.exit()
-'''
+
 
 
 
@@ -32,11 +32,6 @@ def write_key(keyfile):
     key = Fernet.generate_key()
     with open("keys/"+keyfile, "wb+") as key_file:
         key_file.write(key)
-#write_key("key4.key")
-#write_key("key3.key")
-#write_key("key2.key")
-#write_key("key1.key")
-#username,username2,username3,title,password,note,url,category,otpSecret
 
 def load_key(keynum):
     file = open("keys/"+keynum, "rb")
@@ -60,14 +55,10 @@ else:
     os.mkdir(os.path.dirname(__file__) + "\keys")
     random_string = ''
     for _ in range(500000):
-        # Considering only upper and lowercase letters
         random_integer = random.randint(97, 97 + 26 - 1)
         flip_bit = random.randint(0, 1)
-        # Convert to lowercase if the flip bit is on
         random_integer = random_integer - 32 if flip_bit == 1 else random_integer
-        # Keep appending random characters using chr(x)
         random_string += (chr(random_integer))
-    #print(random_string)
     with open("keys/salt.salt","w+")as f:
         f.write(random_string)
         pass
@@ -106,14 +97,7 @@ def add():
         f.write(ency(code)+"|"+salt)
 
 def view():
-    '''
-    def run(program_DIR):
-        os.system("python UNENCR_" + program_DIR )
-        pass
-    '''
     codeDIR2 = input("code NAME: ")
-    #codeDIR2,filename1 = CodeDIR.split(".")
-    #codeDIR2,filename1 = CodeDIR.split(".")
     with open("encrypted_scripts/"+ codeDIR2 + ".encr" , 'r') as f:
         code = f.read()
         codeaf,salt = code.split("|")
@@ -121,20 +105,7 @@ def view():
         codedf = codeDIR2 + ".py"
 
         exec(dncy(codeaf))
-        '''
-    with open("UNENCR_" + codeDIR2 + ".py" , "w+") as f:
-        f.write(dncy(codeaf))
-        
-        #time.sleep(2)
-        #run(codedf)
-        #os.system("python UNENCR_" + codedf )
-'''
-    
-        
-
-
-    
-
+      
 def ency(variable):
 
     pwd4= fer.encrypt(variable.encode()).decode()
